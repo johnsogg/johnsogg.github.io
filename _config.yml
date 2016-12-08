@@ -6,7 +6,6 @@ repository: johnsogg/johnsogg.github.io
 
 highlighter: pygments
 permalink: /:title
-markdown: redcarpet
 
 data:
   feed_title: jnl
