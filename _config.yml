@@ -1,0 +1,26 @@
+title: jnl
+author: Gabe Johnson
+description: Standard issue blog
+
+repository: johnsogg/johnsogg.github.io
+
+highlighter: pygments
+permalink: /:title
+markdown: redcarpet
+
+data:
+  feed_title: jnl
+  feed_description: Gabe Johnson''s Blog
+  links:
+    - url: /
+      title: jnl Home
+    - url: /about
+      title: About
+
+
+url:
+baseurl:
+
+sass:
+  sass_dir: public/css
+  style: :compressed
