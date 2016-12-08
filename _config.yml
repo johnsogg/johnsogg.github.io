@@ -4,7 +4,7 @@ description: Standard issue blog
 
 repository: johnsogg/johnsogg.github.io
 
-highlighter: pygments
+highlighter: rouge
 permalink: /:title
 
 data:
