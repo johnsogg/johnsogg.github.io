@@ -193,7 +193,7 @@ Install the `godef` tool from the cmd line, again using `-u` to update an existi
 $ go get -u github.com/rogpeppe/godef/...
 ```
 
-**Note for `gb` users:**: `godef` will not know how to find your project's files until you run a special function to figure out a proper `GOPATH`. You can do it manually or add a hook to run it as needed: `M-x go-set-project`. I ended up using `projectile` (a project-centric emacs plugin) and issue the `go-set-project` in the project switching hook.
+**Note for `gb` users:** `godef` will not know how to find your project's files until you run a special function to figure out a proper `GOPATH`. You can do it manually or add a hook to run it as needed: `M-x go-set-project`. I ended up using `projectile` (a project-centric emacs plugin) and issue the `go-set-project` in the project switching hook.
 
 ### Projectile
 
