@@ -22,9 +22,7 @@ References and inspiration for this:
 ### Bash Config
 ```bash
 # file: ~/.bash_profile
-export GOROOT=/usr/local/go            
 export GOPATH=~/Development/gocode
-export PATH=$PATH:$GOROOT/bin
 export PATH=$PATH:$GOPATH/bin
 ```
 
@@ -194,6 +192,21 @@ Install the `godef` tool from the cmd line, again using `-u` to update an existi
 ```bash
 $ go get -u github.com/rogpeppe/godef/...
 ```
+
+**Note for `gb` users:**: `godef` will not know how to find your project's files until you run a special function to figure out a proper `GOPATH`. You can do it manually or add a hook to run it as needed: `M-x go-set-project`. I ended up using `projectile` (a project-centric emacs plugin) and issue the `go-set-project` in the project switching hook.
+
+### Projectile
+
+I used `package-install` to install `projectile` and `flx-ido` to get around the `gb/godef/GOPATH` problem that was just mentioned. This is totally optional, but instructions are here for posterity. Once installed, edit your config file to contain:
+
+```cl
+(projectile-mode)
+(defun my-switch-project-hook ()
+  (go-set-project))
+(add-hook 'projectile-after-switch-project-hook #'my-switch-project-hook)
+```
+
+Now, you'll have projectile mode begun automatically when emacs starts, and it runs `go-set-project` every time you switch projects with `C-c p p` (even if the target project is in Javascript or Ook).
 
 ### Create Go mode load hook
 
