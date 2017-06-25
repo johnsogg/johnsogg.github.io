@@ -193,7 +193,9 @@ Install the `godef` tool from the cmd line, again using `-u` to update an existi
 $ go get -u github.com/rogpeppe/godef/...
 ```
 
-**Note for `gb` users:** `godef` will not know how to find your project's files until you run a special function to figure out a proper `GOPATH`. You can do it manually or add a hook to run it as needed: `M-x go-set-project`. I ended up using `projectile` (a project-centric emacs plugin) and issue the `go-set-project` in the project switching hook.
+#### Note for `gb` users
+
+`godef` will not know how to find your project's files until you run a special function to figure out a proper `GOPATH`. You can do it manually or add a hook to run it as needed: `M-x go-set-project`. I ended up using `projectile` (a project-centric emacs plugin) and issue the `go-set-project` in the project switching hook.
 
 ### Projectile
 
@@ -254,6 +256,18 @@ $ go get -u github.com/nsf/gocode
 ```
 
 And `M-x package-install` `go-autocomplete`.
+
+#### Special note for `gb` users
+
+The `gocode` binary will not be able to autocomplete symbols unless it is configured to use `gb` semantics. To manually switch between `go` and `gb` project structures, do this in a terminal:
+
+```bash
+$ gocode set package-lookup-mode gb
+```
+
+It should output `package-lookup-mode "gb"`. If you need to work on something in a traditional `go` project structure, run the same command but with `go` instead of `gb`.
+
+If anyone knows how to make `go-autocomplete` detect the project environment, let me know.
 
 ### goimports
 
